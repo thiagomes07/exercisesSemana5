@@ -1,19 +1,5 @@
-# Instruções
+<h1 align="center">Resoluções</h1>
 
-- Faça uma cópia deste arquivo .md para um repositório próprio
-- Resolva as 6 questões objetivas assinalando a alternativa correta
-- Resolva as 4 questões dissertativas escrevendo no próprio arquivo .md
-  - lembre-se de utilizar as estruturas de código como ``esta aqui com ` `` ou
-```javascript
-//esta aqui com ```
-let a = "olá"
-let b = 10
-print(a)
-```
-- Resolva as questões com uso do Visual Studio Code ou ambiente similar.
-- Teste seus códigos antes de trazer a resposta para cá.
-- Cuidado com ChatGPT e afins: entregar algo só para ganhar nota não faz você aprender e ficar mais inteligente. Não seja dependente da máquina!
-- ao final, publique seu arquivo lista_01.md com as respostas em seu repositório, e envie o link pela Adalove. 
 
 # Questões objetivas
 
@@ -32,6 +18,7 @@ b) Imprime os números ímpares de 1 a 10.
 
 d) Imprime os números ímpares de 2 a 10.
 
+**Resposta: "c)"**
 ______
 
 **2)** Identificar a linha que falta no código para criar uma classe Veiculo com atributo marca, e uma classe Carro que herda de Veiculo com um método ligar(). 
@@ -49,6 +36,7 @@ C) class Moto extends Veiculo {};
 
 D) carro1.ligar();
 
+**Resposta: "a)"**
 ______
 
 **3)** Qual é o valor de resultado após a execução deste código?
@@ -66,6 +54,7 @@ C) 14
 
 D) 12
 
+**Resposta: "a)"**
 ______
 
 **4)** Como você criaria um método `acelerar()` em uma classe `Carro`, que recebe um parâmetro `velocidade` e o adiciona a um atributo `velocidadeAtual`?
@@ -80,6 +69,7 @@ C) ![Uma imagem](assets/ex04_3.PNG)
 
 D) ![Uma imagem](assets/ex04_4.PNG)
 
+**Resposta: "a)"**
 ______
 
 **5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca?
@@ -93,6 +83,7 @@ C) ![Uma imagem](assets/ex05_3.PNG)
 
 D) ![Uma imagem](assets/ex05_4.PNG)
 
+**Resposta: "a)"**
 ______
 
 **6)** Observe o código abaixo:
@@ -110,6 +101,7 @@ C) "João Maria"
 
 D) "undefined undefined"
 
+**Resposta: "a)"**
 ______
 
 # Questões dissertativas
