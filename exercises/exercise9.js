@@ -1,28 +1,27 @@
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+class SomadorDeNotas {
+  constructor() {
+    this.total = 0;
   }
 
-  describe() {
-    return `Olá, meu name é ${this.name}. Tenho ${this.age} anos.`;
-  }
-}
-
-class Gato extends Animal {
-  constructor(name, age, color) {
-    super(name, age);
-
-    this.color = color;
+  adicionarNota(nota) {
+    if (typeof nota !== 'number' || isNaN(nota)) { 
+      // Testa se a nota é um número válido. Quero um 10, fessor
+      throw new Error('A nota deve ser um número válido.');
+    }
+    
+    this.total += nota;
   }
 
-  miar(){
-    return `Sou um gato da cor ${this.color}`
+  vertTotal() {
+    return this.total;
   }
 }
 
-const dog = new Animal("Bebeto", 16);
-const cat = new Gato("Romário", 12, "Azul");
+const somador = new SomadorDeNotas();
 
-console.log(dog.describe());
-console.log(cat.miar());
+somador.adicionarNota(7);
+somador.adicionarNota(7.5);
+somador.adicionarNota(9.3);
+somador.adicionarNota(8.8);
+
+console.log(somador.vertTotal());

@@ -218,22 +218,33 @@ Dica: Utilize console.log() para exibir as informações!
 **Resposta:**
 
 ```javascript
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+class SomadorDeNotas {
+  constructor() {
+    this.total = 0;
   }
 
-  describe() {
-    return `Olá, meu nome é ${this.name}. Tenho ${this.age} anos.`;
+  adicionarNota(nota) {
+    if (typeof nota !== 'number' || isNaN(nota)) { 
+      // Testa se a nota é um número válido. Quero um 10, fessor
+      throw new Error('A nota deve ser um número válido.');
+    }
+    
+    this.total += nota;
+  }
+
+  vertTotal() {
+    return this.total;
   }
 }
 
-const dog = new Animal("Bebeto", 16);
-const cat = new Animal("Romário", 12);
+const somador = new SomadorDeNotas();
 
-console.log(dog.describe());
-console.log(cat.describe());
+somador.adicionarNota(7);
+somador.adicionarNota(7.5);
+somador.adicionarNota(9.3);
+somador.adicionarNota(8.8);
+
+console.log(somador.vertTotal());
 ```
 ______
 
@@ -259,20 +270,54 @@ Certifique-se de explicar cada parte do código utilizando comentários, explica
 **Resposta:**
 
 ```javascript
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  describe() {
-    return `Olá, meu nome é ${this.name}. Tenho ${this.age} anos.`;
+class Funcionario {
+  constructor(nome, idade, salarioBase) {
+    // Inicializa os atributos: nome, idade e salarioBase do funcionário
+    this.nome = nome;
+    this.idade = idade;
+    this.salarioBase = salarioBase;
   }
 }
 
-const dog = new Animal("Bebeto", 16);
-const cat = new Animal("Romário", 12);
+class Professor extends Funcionario {
+  constructor(nome, idade, disciplina) {
+    // Chama o construtor da classe pai (Funcionario) para iniciar nome, idade e salarioBase
+    super(nome, idade, 0); // Nenhum salário base especificado inicialmente
 
-console.log(dog.describe());
-console.log(cat.describe());
+    // inicia os atributos específicos do Professor
+    this.disciplina = disciplina;
+    this.horasSemana = 0;
+    this.valorHora = 0;
+  }
+
+  calcularSalario(horasSemana, valorHora, salarioBase) {
+    // Atualiza os atributos: horasSemana, valorHora e salarioBase
+    this.horasSemana = horasSemana;
+    this.valorHora = valorHora;
+    this.salarioBase = salarioBase;
+
+    // Calcula o salário multiplicando as horas semanais pelo valor da hora e adicionando o salário base
+    this.salario = this.horasSemana * this.valorHora + this.salarioBase;
+    
+    // Retorna o salário calculado
+    return this.salario;
+  }
+
+  descrever() {
+    // Retorna uma string descrevendo o professor, usando os atributos: nome, idade e disciplina
+    return `Olá, sou o(a) professor(a) ${this.nome}! Tenho ${this.idade} anos e ministro a matéria ${this.disciplina}.`;
+  }
+}
+
+// Cria instâncias de Professor
+const professorUX = new Professor('Jeferson', 45, 'UX');
+const professorPOO = new Professor('Ana', 37, 'POO');
+
+// Calcula e exibe o salário de cada professor, fornecendo horasSemana, valorHora e salarioBase
+console.log(professorPOO.calcularSalario(40, 350, 3000));
+console.log(professorUX.calcularSalario(24, 350, 3000));
+
+// Exibe a descrição de cada professor
+console.log(professorPOO.descrever());
+console.log(professorUX.descrever());
 ```
